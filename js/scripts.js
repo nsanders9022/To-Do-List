@@ -10,6 +10,8 @@ ToDo.prototype.taskD = function () {
   return " complete " + this.task + " by " + this.date;
 }
 
+
+
 //user interface logic
 $(document).ready(function() {
   $("form#new-task").submit(function(event){
@@ -23,7 +25,7 @@ $(document).ready(function() {
     var newToDoItem = new ToDo(inputtedTask, inputtedSubTask, inputtedDate, inputtedNotes);
 
     $("ul#task-list").append("<li class='listItemId'><span class='taskItem'>" +
-  newToDoItem.taskD() + "</span><button class='delete'>Delete</button> </li>");
+  newToDoItem.taskD() + "</span><button class='delete'>Done!</button><button class='important'>Mark as Important!</button> </li>");
 
     $(".taskItem").last().click(function() {
       $("#show-tasks").show();
@@ -35,6 +37,10 @@ $(document).ready(function() {
 
     $(".delete").last().click(function() {
       $(this).closest('li').remove();
+    })
+
+    $(".important").last().click(function() {
+      $(this).closest('li').addClass("important");
     })
 
     $("input#task").val("");
