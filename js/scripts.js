@@ -10,8 +10,6 @@ ToDo.prototype.taskD = function () {
   return " complete " + this.task + " by " + this.date;
 }
 
-
-
 //user interface logic
 $(document).ready(function() {
   $("form#new-task").submit(function(event){
@@ -21,6 +19,10 @@ $(document).ready(function() {
     var inputtedSubTask = $("input#sub-tasks").val();
     var inputtedDate = $("input#date").val();
     var inputtedNotes= $("input#notes").val();
+
+    if (inputtedTask.length === 0 || inputtedSubTask.length === 0 || inputtedDate.length === 0){
+      return alert("Please fill in all of the fields")
+    }
 
     var newToDoItem = new ToDo(inputtedTask, inputtedSubTask, inputtedDate, inputtedNotes);
 
