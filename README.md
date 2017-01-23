@@ -5,18 +5,18 @@ Specifications:
 
 # behavior: when To-Do-item is clicked display in right-side column.
 * input: Do the dishes
-* output:
+* output: Display the output on the right hand side
 
-# behavior:
+# behavior: When "delete" is clicked it will remove the task from the list
+* input: delete
+* output: List item is deleted
+
+
+# behavior: Alert the user to fill in all of the fields if one or more are missing
 * input:
-* output:
+* output: Please fill in all of the fields
 
 
-# behavior:
-* input:
-* output:
-
-
-# behavior:
-* input:
-* output:
+# behavior: Turn the list item red if it is marked as important
+* input: Do the dishes
+* output: Do the dishes (in red)

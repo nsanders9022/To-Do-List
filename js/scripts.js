@@ -1,0 +1,42 @@
+//business logic
+function ToDo(task, subTasks, date, notes) {
+  this.task = task;
+  this.subTasks = subTasks;
+  this.date = date;
+  this.notes = notes;
+}
+
+ToDo.prototype.taskD = function () {
+  return " complete " + this.task + " by " + this.date;
+}
+
+//user interface logic
+$(document).ready(function() {
+  $("form#new-task").submit(function(event){
+    event.preventDefault()
+
+    var inputtedTask = $("input#task").val();
+    var inputtedSubTask = $("input#sub-tasks").val();
+    var inputtedDate = $("input#date").val();
+    var inputtedNotes= $("input#notes").val();
+
+    var newToDoItem = new ToDo(inputtedTask, inputtedSubTask, inputtedDate, inputtedNotes);
+
+    $("ul#task-list").append("<li><span class='taskItem'>" +
+  newToDoItem.taskD() + "</span></li>");
+
+    $(".taskItem").last().click(function() {
+      $("#show-tasks").show();
+      $("#show-tasks h2").text(newToDoItem.task);
+      $(".sub-tasks").text(newToDoItem.subTasks);
+      $(".date").text(newToDoItem.date);
+      $(".notes").text(newToDoItem.notes);
+    });
+
+    $("input#task").val("");
+    $("input#sub-tasks").val("");
+    $("input#date").val("");
+    $("input#notes").val("");
+
+  })
+})

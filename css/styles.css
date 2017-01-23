@@ -1,0 +1,12 @@
+#show-tasks {
+  display: none;
+}
+
+.taskItem {
+  cursor: pointer;
+  color: #0088cc;
+};
+
+.taskItem:hover {
+  text-decoration: underline;
+};
