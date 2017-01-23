@@ -20,14 +20,14 @@ $(document).ready(function() {
     var inputtedDate = $("input#date").val();
     var inputtedNotes= $("input#notes").val();
 
-    if (inputtedTask.length === 0 || inputtedSubTask.length === 0 || inputtedDate.length === 0){
-      return alert("Please fill in all of the fields")
+    if (inputtedTask.length === 0 || inputtedDate.length === 0){
+      return alert("Please fill in a task name and due date")
     }
 
     var newToDoItem = new ToDo(inputtedTask, inputtedSubTask, inputtedDate, inputtedNotes);
 
     $("ul#task-list").append("<li class='listItemId'><span class='taskItem'>" +
-  newToDoItem.taskD() + "</span><button class='delete'>Done!</button><button class='important'>Mark as Important!</button> </li>");
+  newToDoItem.taskD() + "</span><button class='delete'>Done!</button><button class='important'>Change importance status</button> </li>");
 
     $(".taskItem").last().click(function() {
       $("#show-tasks").show();
@@ -42,7 +42,7 @@ $(document).ready(function() {
     })
 
     $(".important").last().click(function() {
-      $(this).closest('li').addClass("important");
+      $(this).closest('li').toggleClass("important");
     })
 
     $("input#task").val("");
