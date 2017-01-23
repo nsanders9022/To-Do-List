@@ -22,8 +22,8 @@ $(document).ready(function() {
 
     var newToDoItem = new ToDo(inputtedTask, inputtedSubTask, inputtedDate, inputtedNotes);
 
-    $("ul#task-list").append("<li><span class='taskItem'>" +
-  newToDoItem.taskD() + "</span></li>");
+    $("ul#task-list").append("<li class='listItemId'><span class='taskItem'>" +
+  newToDoItem.taskD() + "</span><button class='delete'>Delete</button> </li>");
 
     $(".taskItem").last().click(function() {
       $("#show-tasks").show();
@@ -32,6 +32,10 @@ $(document).ready(function() {
       $(".date").text(newToDoItem.date);
       $(".notes").text(newToDoItem.notes);
     });
+
+    $(".delete").last().click(function() {
+      $(this).closest('li').remove();
+    })
 
     $("input#task").val("");
     $("input#sub-tasks").val("");
