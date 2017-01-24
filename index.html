@@ -13,25 +13,34 @@
       <div class="col-md-6">
         <h2>Add a task to complete</h2>
         <form id="new-task">
-          <div class="form-group">
-            <label for="task">Task</label>
-            <input type="text" class="form-control" id="task">
+
+          <div id="add-task-id">
+            <div class="add-task-div">
+              <div class="form-group">
+                <label for="task">Task</label>
+                <input type="text" class="form-control task">
+              </div>
+
+              <div class="form-group">
+                <label for="sub-tasks">Sub tasks</label>
+                <input type="text" class="form-control sub-tasks">
+              </div>
+
+              <div class="form-group">
+                <label for="date">Due date</label>
+                <input type="date" class="form-control date">
+              </div>
+
+              <div class="form-group">
+                <label for="notes">Additional notes</label>
+                <input type="text" class="form-control notes">
+              </div>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="sub-tasks">Sub tasks</label>
-            <input type="text" class="form-control" id="sub-tasks">
-          </div>
 
-          <div class="form-group">
-            <label for="date">Due date</label>
-            <input type="date" class="form-control" id="date">
-          </div>
 
-          <div class="form-group">
-            <label for="notes">Additional notes</label>
-            <input type="text" class="form-control" id="notes">
-          </div>
+          <span class="btn btn-primary" id="add-task-button">Another Task</span>
 
           <button type="submit" class="btn btn-success">Add!</button>
 
@@ -47,9 +56,9 @@
         <div id="show-tasks">
           <h2></h2>
 
-          <p>Sub Tasks: <span class="sub-tasks"></span></p>
-          <p>Due Date: <span class="date"></span></p>
-          <p>Additional notes: <span class="notes"></span></p>
+          <p>Sub Tasks: <span class="sub-tasks-output"></span></p>
+          <p>Due Date: <span class="date-output"></span></p>
+          <p>Additional notes: <span class="notes-output"></span></p>
         </div>
       </div>
     </div>
